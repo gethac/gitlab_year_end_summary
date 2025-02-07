@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container most-commits-day-container">
+        <div class="music-btn-container">
+            <button id="play-button" class="music_close"></button>
+        </div>
+        <div class="summary-header">
+            <img src="{{ url_for('static', filename='img/3.jpg') }}" alt="Most Commits Day Banner"
+                 class="summary-banner">
+            <div class="description">
+                <div class="description-item">{{ stats.year }} 年</div>
+                <div class="description-item">您在 <span class="highlight">{{ most_commits_day }}</span> 提交了最多的代码
+                </div>
+                <div class="description-item">达到了惊人的 <span
+                        class="highlight">{{ stats.most_commits_day_lines }}</span> 行
+                </div>
+                <div class="description-item">这一天</div>
+                <div class="description-item">您超越了自己</div>
+                <div class="description-item">创造了新的记录</div>
+            </div>
+        </div>
+        <a href="{{ url_for('commit_times') }}" class="button">&rarr;</a>
+    </div>
+{% endblock %}

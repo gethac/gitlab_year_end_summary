@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Gitlab年度报告</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<audio id="background-music" loop>
+    <source src="{{ url_for('static', filename='music/background.mp3') }}" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+<div class="base">
+    {% block content %}
+    {% endblock %}
+</div>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

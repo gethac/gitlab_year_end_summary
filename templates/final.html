@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container final-container">
+        <div class="music-btn-container">
+            <button id="play-button" class="music_close"></button>
+        </div>
+        <div class="final-header">
+            <div class="description">
+                <h1>年度关键词</h1>
+                <div class="description-item" style="margin: 20px 0;">
+                    <span class="highlight">{{ stats.keyword }}</span>
+                </div>
+                <div class="description-item">{{ stats.keyword_description }}</div>
+            </div>
+        </div>
+        <a href="{{ url_for('index') }}" class="email_input-button"
+           style="margin-top: 20px;border-radius: 0%;padding: 10px 20px;">返回首页</a>
+    </div>
+{% endblock %}

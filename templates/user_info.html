@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container user-info-container">
+        <div class="music-btn-container">
+            <button id="play-button" class="music_close"></button>
+        </div>
+        <div class="user-info-header">
+            <img src="{{ url_for('static', filename='img/1.jpg') }}" alt="User Info Banner" class="user-info-banner">
+            <div class="description">
+                <div class="description-item"> {{ stats.user_register_time }}</div>
+                <div class="description-item"> 是我们相遇的第一天</div>
+                <div class="description-item"> 转眼 {{ stats.total_days }} 天</div>
+                <div class="description-item"> 已经快 {{ stats.total_years + 1 }} 年</div>
+            </div>
+        </div>
+        <a href="{{ url_for('summary') }}" class="button">&rarr;</a>
+    </div>
+{% endblock %}

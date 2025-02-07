@@ -1,0 +1,3 @@
+GITLAB_API_URL = ""
+GITLAB_ACCESS_TOKEN = ""
+YEAR = 2024  # 指定年份

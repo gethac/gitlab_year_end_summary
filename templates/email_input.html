@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container email-container">
+        <h1>Gitlab年度报告</h1>
+        <div class="app-description">
+            <p>
+                本应用提供了Gitlab年度使用情况报告，通过输入您的用户名和邮箱地址，您可以获取到您在Gitlab上的年度使用情况报告。</p>
+            <p>请确保您输入的邮箱地址是您在Gitlab上注册的邮箱地址，以便我们能够正确地为您生成报告。</p>
+        </div>
+        <form id="emailForm" action="{{ url_for('email_input') }}" method="post">
+            <input type="text" name="username" placeholder="请输入用户名" required
+                   style="width: 80%; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <input type="email" name="email" placeholder="请输入邮箱" required
+                   style="width: 80%; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <button type="submit" class="email_input-button"
+                    style="width: auto; padding: 10px 20px; border-radius: 8px;">开启您的2024年穿越之旅
+            </button>
+        </form>
+        <div class="loading-bar" id="loadingBar">
+            <div class="loading-bar-fill" id="loadingBarFill"></div>
+            <span id="loadingText">0%</span>
+        </div>
+        <div class="author-info">©2025 GuoYP</div>
+    </div>
+    <script>
+        document.getElementById('emailForm').addEventListener('submit', function () {
+            document.getElementById('loadingBar').style.display = 'block'; // 显示进度条
+            // 模拟数据加载进度
+            var progress = 0;
+            var interval = setInterval(function () {
+                if (progress < 90) {
+                    progress += 10; // 进度小于90时，每次增加10%
+                } else if (progress < 95) {
+                    progress += 1; // 进度在90到95之间，每次增加1%
+                } else if (progress < 99.9) {
+                    progress += 0.1; // 进度在95到99.9之间，每次增加0.1%
+                }
+                document.getElementById('loadingBarFill').style.width = progress + '%'; // 更新进度条
+                document.getElementById('loadingText').innerText = progress + '%'; // 更新进度文本
+                if (progress >= 99.9) {
+                    clearInterval(interval); // 停止定时器
+                }
+            }, 1000); // 每秒更新一次进度
+
+            musicPlay()
+        });
+    </script>
+{% endblock %}

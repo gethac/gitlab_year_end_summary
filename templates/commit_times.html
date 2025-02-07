@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container commit-times-container">
+        <div class="music-btn-container">
+            <button id="play-button" class="music_close"></button>
+        </div>
+        <div class="summary-header">
+            <img src="{{ url_for('static', filename='img/4.jpg') }}" alt="Commit Times Banner" class="summary-banner">
+            <div class="description">
+                <div class="description-item">{{ stats.year }} 年</div>
+                <div class="description-item">{{ stats.earliest_commit_date }} <span
+                        class="highlight">{{ stats.earliest_commit_time }}</span> 您提交了一次代码
+                </div>
+                <div class="description-item">这是您一年中提交最早的一次</div>
+                <div class="description-item">{{ stats.latest_commit_date }} <span
+                        class="highlight">{{ stats.latest_commit_time }}</span> 您提交了一次代码
+                </div>
+                <div class="description-item">这是您一年中提交最晚的一次</div>
+                <div class="description-item">无论是清晨还是深夜</div>
+                <div class="description-item">您都在为梦想而奋斗</div>
+            </div>
+        </div>
+        <a href="{{ url_for('total_lines') }}" class="button">&rarr;</a>
+    </div>
+{% endblock %}

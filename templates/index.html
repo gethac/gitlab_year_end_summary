@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container index-container">
+        <div class="music-btn-container">
+            <button id="play-button" class="music_close"></button>
+        </div>
+        <h1>{{ stats.user.name }}，你好！</h1>
+        <h1>欢迎来到你的Gitlab年度报告</h1>
+        <div class="index-header">
+            <div class="description">
+                <div class="description-item">这一年,</div>
+                <div class="description-item">您付出了无数的努力，迎接了无数的挑战。</div>
+                <div class="description-item">让我们一起回顾这段旅程，为自己喝彩！</div>
+            </div>
+        </div>
+        <a href="{{ url_for('user_info') }}" class="button">&rarr;</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container summary-container">
+        <div class="music-btn-container">
+            <button id="play-button" class="music_close"></button>
+        </div>
+        <div class="summary-header">
+            <img src="{{ url_for('static', filename='img/2.jpg') }}" alt="Summary Banner" class="summary-banner">
+            <div class="description">
+                <div class="description-item"> {{ stats.year }} 年</div>
+                <div class="description-item"> 您共参与项目 <span
+                        class="highlight">{{ stats.this_year_projects }}</span> 个
+                </div>
+                <div class="description-item"> 共提交代码 <span class="highlight">{{ stats.total_commits }}</span> 次
+                </div>
+                <div class="description-item"> 这一年</div>
+                <div class="description-item"> 您在代码的世界中不断探索</div>
+                <div class="description-item"> 留下了无数的足迹</div>
+            </div>
+        </div>
+        <a href="{{ url_for('most_commits_day') }}" class="button">&rarr;</a>
+    </div>
+{% endblock %}

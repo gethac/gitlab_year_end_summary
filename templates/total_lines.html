@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container total-lines-container">
+        <div class="music-btn-container">
+            <button id="play-button" class="music_close"></button>
+        </div>
+        <div class="summary-header">
+            <img src="{{ url_for('static', filename='img/5.jpg') }}" alt="Total Lines Banner" class="summary-banner">
+            <div class="description">
+                <div class="description-item">一年中</div>
+                <div class="description-item">您增加了 <span class="highlight">{{ total_lines_added }}</span> 行代码
+                </div>
+                <div class="description-item">您删除了 <span class="highlight">{{ total_lines_deleted }}</span> 行代码
+                </div>
+                <div class="description-item">每一行代码都是智慧的结晶</div>
+            </div>
+        </div>
+        <a href="{{ url_for('final') }}" class="button">&rarr;</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,80 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Virtual environment directories
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Python egg files
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Pytest cache
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+*.cover
+*.py,cover
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pylint
+pylint-report.txt
+pylint-global.txt
+
+# Pyre type checker
+.pyre/
+
+# VS Code settings
+.settings/
+
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+ehthumbs.db
